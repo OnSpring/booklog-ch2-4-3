@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+<title>Post Form</title>
+</head>
+<body>
+	<form action="post.html" method="post"
+		th:action="@{${#httpServletRequest.servletPath}}">
+		<div>
+			<label>bookTitle</label>
+			<input type="text" name="bookTitle" th:field="${post.bookTitle}" /> <!-- ② -->
+		</div>
+		<div>
+			<label>content</label>
+			<textarea name="content" th:field="${post.content}"></textarea> <!-- ② -->
+		</div>
+		<input type="submit" value="저장" />
+	</form>
+</body>
+</html>
